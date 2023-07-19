@@ -90,6 +90,8 @@ fun main() {
         var lastName : String
         var age : Int
         var above18 : Boolean
+        
+        lateinit var movie : String // lateinit keywomrd doesn't work with primitive data type like Int, Char, etc.
 
         init{ // initializer block (it is executed just after creation of an object)
             this.firstName = fn
@@ -99,6 +101,7 @@ fun main() {
         }
     }
     /* var user1 = PrimaryUser("ayu", "singh", 17)
+    user1.movie = "flash"
     println("${user1.above18}") */
 
     // primary constructor initialized in class header with default values. Directly initialised:-
@@ -209,9 +212,12 @@ fun main() {
         }
     }
 
-    var obj = GetandSet("ayu")
+    /* var obj = GetandSet("ayu")
     print(obj.name) // calls getter
-    obj.name = "ayush" // calls setter
+    obj.name = "ayush" // calls setter */
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    var res = Static.sum(2,3)
+    print(res)
 }
 
 fun myFun(a : Int, b : Int) : Int{ // the parameters here are val i.e. constants and name has to be same as arguments. Int outside the parameters means return type is int.
@@ -224,4 +230,12 @@ fun variableArguments(vararg nums : Int) : Int{
     return sum
 }
 
-// getters and setters
+class Static
+{
+    companion object {  // meathods and variables declared inside this object are static so class properties are not accesible here.
+        fun sum(a : Int, b : Int) = a + b
+    }
+}
+
+
+// singleton
