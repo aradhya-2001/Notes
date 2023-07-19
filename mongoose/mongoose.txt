@@ -1,0 +1,118 @@
+const mongos=require("mongoose")
+
+single connection:-
+
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}
+const dbUrl="mongodb://0.0.0.0:27017/fruitsDB"
+mongos.connect(dbUrl, options, (err)=>{
+    if(!err){
+        console.log("db connected")
+    }else{
+        console.log(err)
+    }
+})
+
+via promises:-
+
+mongoose.connect(dbUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(() => {
+    console.log("db connected")
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+  });
+
+multiple connections:-
+
+const connection1 = mongoose.createConnection(dbUrl1, options);
+
+const connection2 = mongoose.createConnection(dbUrl2, options);
+
+const model1=connection1.model("user1",schema)
+const model2=connection2.model("user2",schema)
+
+operations:-
+
+const fSchema=new mongos.Schema({
+    name:{
+        type:String,
+        required:[true,"please enter name"]
+    },
+    rating:{
+        type:Number,
+        min:0,
+        max:10
+    },
+    review:String
+})
+
+const fModel=mongos.model("fruit",fSchema)
+
+const f1=new fModel({
+    name:"apple",
+    rating:10,
+    review:"healthy"
+})
+
+const f2=new fModel({
+    name:"kiwi",
+    rating:9,
+    review:"good"
+})
+
+const f3=new fModel({
+    name:"mango",
+    rating:8,
+    review:"awesome"
+})
+
+const f4=new fModel({
+    name:"bananna",
+    rating:7,
+    review:"okish"
+})
+
+/* fModel.insertMany([f1,f2,f3,f4],function(err){
+    if(err){
+        console.log(err)
+    }else{
+        console.log("successfully saved data")
+    }
+}) */
+
+fModel.find(function(err,results){
+    if(err){
+        console.log(err)
+    }else{
+        results.forEach((i) => {
+            console.log(i.name)
+           /*  mongos.connection.close() */
+        });
+    }
+})
+
+const pSchema=new mongos.Schema({
+    name:{
+        type:String,
+        required:[true,"please enter name"]
+    },
+    age:Number,
+    favFruit:fSchema
+})
+
+const pModel=mongos.model("people",pSchema)
+
+const p=new pModel({
+    name:"John",
+    age:30,
+    favFruit:f3
+})
+
+p.save()
+ mongos.connection.close()

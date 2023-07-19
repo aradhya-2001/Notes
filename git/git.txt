@@ -1,0 +1,63 @@
+git init
+git status
+git add file.txt / git add .
+git commit -m "message"
+git commit -am "message"                    -> git commit+git add
+git commit --amend                          -> if made minor changes and dont create new commit, stage it and use this cmd. It renames the current commit by opening vim editor.
+git checkout <commit_id .>                  -> to go to a particular commit 
+git log
+git log --all --decorate --online --graph
+git log -2
+git reflog
+git diff file.txt                           -> shows content thats in modified stage
+git diff --staged file.txt                  -> shows content of file thats in SA
+git diff main..exp                          -> shows diff btw main and exp branches
+git stash, git pop, git stash clear
+
+git remote add origin <link>
+git push -u origin main
+git fetch origin                            -> if the origin/main (of LR) is running behind main of RR, then this brings the latest code from RR to LR (in .git folder). Write git merge to reflect changes in WD
+git pull                                    -> git fetch+git merge
+git config --global user.email , git config --global user.name -> check email and name of remote repo
+git remote                                  -> gives the name of the remote repo like "origin"
+git remote -v                               -> gives name and url of repo where we have fetched from and where we pushed
+git remote remove origin                
+git clone <link> xyz                        -> clones the remote repo in our pc in the current dir under folder xyz
+git branch                                  -> which branch we are on
+git branch abc                              -> create branch abc
+git branch -m abc                           -> rename current branch to abc
+git checkout exp                            -> to switch current branch to exp
+git checkout -b exp                         -> create and switch
+git branch -d exp                           -> del exp branch
+git merge exp                               -> merge current branch (that we r on) to exp
+git commit -a                               -> after the merge conflict has been resolved do this to let git know merge conflict has been resolved
+git rebase main                             -> creates new commits after last commit of main and copies all commits of active branch to those copies (linear)
+git rebase -i main                          -> selective addition of commits of active branch
+git rebase -i <commit_id>^                  -> it select commits from commit_id till the top i.e. HEAD. To del any commits del their pick line in vim editor
+
+
+
+git rm abc.txt                              -> fully del a commited file from wd, SA and LR
+git rm -f abc.txt                           -> fully del a staged file (not yet commited) from WD and SA
+git rm --cached abc.txt                     -> removes file from SA and LR
+
+                                              git restore          git restore --staged
+unmodified(whichever staged or commited last)<------------modified<---------------------staged
+                                              git checkout         git reset HEAD
+
+
+git reset --soft HEAD~2                     -> moves the last 2 commits from LR to SA and make HEAD point to 3rd last commit. Changes will be shown in WD
+git reset --mixed HEAD~2                    -> moves the last 2 commits from LR to untracked and make HEAD point to 3rd last commit. Changes will be shown in WD
+git reset --hard HEAD~2                     -> deletes last 2 commits and make HEAD point to 3rd last commit
+git revert <commit_id>
+git cherry-pick <commit_id>
+
+
+rm -rf .git/
+
+*           -> ignores all
+*.txt       -> ignores all with .txt ext
+*.[ab]      -> ignores .a and .b exts  (not correct)
+/file.txt   -> only file.txt in current directory is ignored
+folder/     -> ignores all files in folder 
+
