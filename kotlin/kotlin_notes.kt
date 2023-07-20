@@ -1,22 +1,22 @@
 fun main() {
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var name: String // declaration
+    var name: String // declaration
     name = "Ayu" // initialisation
     var age1: Int = 22
     var age2 = 22 // since we declared and intialised at same line so kotlin used type inference to recognize the type of literal assigned.
     val constName = "Singh" // val is const variable
     print("hello $name $constName aged $age1 or $age2")
 
-    println("5 + 5 = ${5 + 5}") */
+    println("5 + 5 = ${5 + 5}")
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* println(Int.MAX_VALUE) // 4 bytes
+    println(Int.MAX_VALUE) // 4 bytes
     println(Byte.MAX_VALUE) // Byte data type stores whole no and its size is 1 byte.
-    println(Short.MAX_VALUE) // stores whole no and size is 2 bytes. */
+    println(Short.MAX_VALUE) // stores whole no and size is 2 bytes.
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var bool: Boolean = false
-    println(bool) */
+    var bool: Boolean = false
+    println(bool)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var value1 =
+    var value1 =
         if (true || false) {
             println("if part")
             "last line of if is assigned to value1"
@@ -24,9 +24,9 @@ fun main() {
             println("else part")
             "last line of else is assigned to value1"
         }
-    println(value1) */
+    println(value1)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var i = 11
+    var i = 11
     var value2 =
             when (i) { // below conds are in if else-if i.e. if one is true, exit when.
                 in 1..10 -> {
@@ -46,9 +46,9 @@ fun main() {
                 j == 7 || j == 10 -> "j=7 or j=10"
                 else -> "else"
             }
-    println(value3) */
+    println(value3)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var text1 : String? = "name" // '?' at end of String tells our variable can store null.
+    var text1 : String? = "name" // '?' at end of String tells our variable can store null.
     
     if(text1 != null) println(text1.length) 
     else println("null")
@@ -58,30 +58,30 @@ fun main() {
     println(text2!!.length) // here !! operator will throw null pointer exception if null is assigned otherwise length 
     
     var text3 : String? = null
-    println(text3 ?: "text3 is null") // ?: is called elvis operator. If text3 is not null then text3 is printed otherwise "text3 is null" is printed */
+    println(text3 ?: "text3 is null") // ?: is called elvis operator. If text3 is not null then text3 is printed otherwise "text3 is null" is printed
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* println(myFun(a = 5, b = 3))
+    println(myFun(a = 5, b = 3))
     println(singleLineFunc(a = 3, b = 5))
-    println(variableArguments(2, 2, 2, 2)) */
+    println(variableArguments(2, 2, 2, 2))
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* for(i in 1..10) println(i)
-    for(i in 1 until 10 step 2) println(i)
-    for(i in 10 downTo 1) println(i) */
+    for(x in 1..10) println(x)
+    for(x in 1 until 10 step 2) println(x)
+    for(x in 10 downTo 1) println(x)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* outer@ while(true) // labelled the outer loop
+    outer@ while(true) // labelled the outer loop
     {
-        var i = 0
+        var x = 0
         while(true)
         {
             println("once")
-            if(i == 0) break@outer // breaking outer loop 
+            if(x == 0) break@outer // breaking outer loop 
         }
-    } */
+    }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var arr : Array<String> = arrayOf("hii", "hello", "xyz")
+    var arr : Array<String> = arrayOf("hii", "hello", "xyz")
     println(arr.size)
     var mixedArr = arrayOf("hii", "hello", 1, 2, 3, 'c')
-    println(mixedArr.size) */
+    println(mixedArr.size)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     // primary contructor:-
     class PrimaryUser(fn : String, ln : String, age : Int) 
@@ -100,9 +100,9 @@ fun main() {
             this.above18 = this.age > 18
         }
     }
-    /* var user1 = PrimaryUser("ayu", "singh", 17)
+    var user1 = PrimaryUser("ayu", "singh", 17)
     user1.movie = "flash"
-    println("${user1.above18}") */
+    println("${user1.above18}")
 
     // primary constructor initialized in class header with default values. Directly initialised:-
     class DefaultUser(var firstName : String = "fname", var lastName : String = "lname", var age : Int = 0, var above18 : Boolean = false)
@@ -111,10 +111,10 @@ fun main() {
             above18 = age > 18
         }
     }
-    /* var user2 = DefaultUser("ayu", "singh", 21)
+    var user2 = DefaultUser("ayu", "singh", 21)
     println("${user2.above18}") 
     var user3 = DefaultUser()
-    println("${user3.firstName} , ${user3.lastName} , ${user3.age} , ${user3.above18}") */
+    println("${user3.firstName} , ${user3.lastName} , ${user3.age} , ${user3.above18}")
 
     // secondary contructor. Notice here no parenthesis
     class secondaryUser 
@@ -156,10 +156,10 @@ fun main() {
             println("secondary constructor 4")
         }
     }
-    /* secondaryUser("ayu", "singh", 17) 
+    secondaryUser("ayu", "singh", 17) 
     secondaryUser("ayu", "singh") 
     secondaryUser("ayu") 
-    secondaryUser() */ 
+    secondaryUser() 
  
     // a secondary constructor may call another secondary constructor of the same class using this() function
     class Add {
@@ -174,8 +174,8 @@ fun main() {
             println("The sum of two numbers is: $sumOfTwo")
         }
     }
-    /* Add(2,3,4) // this calls both constructors
-    Add(2,3) // only calls last constructor */
+    Add(2,3,4) // this calls both constructors
+    Add(2,3) // only calls last constructor
 
     class HeaderUser(var firstName : String, var lastName : String, var age : Int){
         constructor(firstName : String, lastName : String) : this(firstName, lastName, age = 0) // secondary constructor calls the primary constructor (class header).
@@ -193,10 +193,10 @@ fun main() {
             println("secodary constructor 3")
         }
     }
-    /* HeaderUser("ayu", "singh", 21) // calls the primary constructor (class header)
+    HeaderUser("ayu", "singh", 21) // calls the primary constructor (class header)
     HeaderUser("ayu", "singh") // this and below 2 calls the secondary constructor
     HeaderUser("ayu")
-    HeaderUser() */
+    HeaderUser()
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     class GetandSet(name : String)
     {
@@ -212,30 +212,60 @@ fun main() {
         }
     }
 
-    /* var obj = GetandSet("ayu")
+    var obj = GetandSet("ayu")
     print(obj.name) // calls getter
-    obj.name = "ayush" // calls setter */
-    //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    obj.name = "ayush" // calls setter
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
     var res = Static.sum(2,3)
     print(res)
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+  val instance1 = SingletonCustom.getInstance() // calls the func so the static variable "instance" being null, constructor is called by SingletonCustom() and an object or instance is created which is assigned to "instance" var. This var holds the memory address of that instance/object.
+  val instance2 = SingletonCustom.getInstance() // on calling the func 2nd time, since instance var is static (is common to a class) is was set to an memory address (on prvs call), is not null . So the same address is returned
+  println(instance1)
+  println(instance2)
+
+  println(singleton) // an instance is created which will trigger init println. Then the instance's address is printed.
+  println(singleton) // since an instance is already created (up). So no new instance is created thats why no init println. Only the  prvs instance' address is printed.
+
 }
 
-fun myFun(a : Int, b : Int) : Int{ // the parameters here are val i.e. constants and name has to be same as arguments. Int outside the parameters means return type is int.
-    return if(a > b) a else b
-} 
-fun singleLineFunc(a : Int, b : Int) = if (a > b) a else b // this works without return type coz of type inference
-fun variableArguments(vararg nums : Int) : Int{
-    var sum = 0
-    for(num in nums) sum += num
-    return sum
-}
-
-class Static
-{
-    companion object {  // meathods and variables declared inside this object are static so class properties are not accesible here.
-        fun sum(a : Int, b : Int) = a + b
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    fun myFun(a : Int, b : Int) : Int{ // the parameters here are val i.e. constants and name has to be same as arguments. Int outside the parameters means return type is int.
+        return if(a > b) a else b
+    } 
+    fun singleLineFunc(a : Int, b : Int) = if (a > b) a else b // this works without return type coz of type inference
+    fun variableArguments(vararg nums : Int) : Int{
+        var sum = 0
+        for(num in nums) sum += num
+        return sum
     }
-}
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    class Static
+    {
+        companion object {  // meathods and variables declared inside this object are static so class properties are not accesible here and are common to all instances.
+            fun sum(a : Int, b : Int) = a + b
+        }
+    }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    // here constructor is private so we cannot create an instance like var obj = SingletonCustom()
+    class SingletonCustom private constructor() 
+    {
+        companion object {
+            private var instance : SingletonCustom? = null
 
+            fun getInstance() : SingletonCustom? {
+                if(instance == null) instance = SingletonCustom()
+
+                return instance
+            }
+        }
+    }
+
+        object singleton {
+            init {
+                println("instance created")
+            }
+        }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // singleton
