@@ -1,22 +1,22 @@
 fun main() {
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var name: String // declaration
+    var name: String // declaration
     name = "Ayu" // initialisation
     var age1: Int = 22
     var age2 = 22 // since we declared and intialised at same line so kotlin used type inference to recognize the type of literal assigned.
     val constName = "Singh" // val is const variable
     print("hello $name $constName aged $age1 or $age2")
 
-    println("5 + 5 = ${5 + 5}") */
+    println("5 + 5 = ${5 + 5}")
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-   /*  println(Int.MAX_VALUE) // 4 bytes
+    println(Int.MAX_VALUE) // 4 bytes
     println(Byte.MAX_VALUE) // Byte data type stores whole no and its size is 1 byte.
-    println(Short.MAX_VALUE) // stores whole no and size is 2 bytes. */
+    println(Short.MAX_VALUE) // stores whole no and size is 2 bytes.
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var bool: Boolean = false
-    println(bool) */
+    var bool: Boolean = false
+    println(bool)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var value1 =
+    var value1 =
         if (true || false) {
             println("if part")
             "last line of if is assigned to value1"
@@ -24,9 +24,9 @@ fun main() {
             println("else part")
             "last line of else is assigned to value1"
         }
-    println(value1) */
+    println(value1)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var i = 11
+    var i = 11
     var value2 =
             when (i) { // below conds are in if else-if i.e. if one is true, exit when.
                 in 1..10 -> {
@@ -46,9 +46,9 @@ fun main() {
                 j == 7 || j == 10 -> "j=7 or j=10"
                 else -> "else"
             }
-    println(value3) */
+    println(value3)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var text1 : String? = "name" // '?' at end of String tells our variable can store null.
+    var text1 : String? = "name" // '?' at end of String tells our variable can store null.
     
     if(text1 != null) println(text1.length) 
     else println("null")
@@ -58,17 +58,17 @@ fun main() {
     println(text2!!.length) // here !! operator will throw null pointer exception if null is assigned otherwise length 
     
     var text3 : String? = null
-    println(text3 ?: "text3 is null") // ?: is called elvis operator. If text3 is not null then text3 is printed otherwise "text3 is null" is printed */
+    println(text3 ?: "text3 is null") // ?: is called elvis operator. If text3 is not null then text3 is printed otherwise "text3 is null" is printed
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* println(myFun(a = 5, b = 3))
+    println(myFun(a = 5, b = 3))
     println(singleLineFunc(a = 3, b = 5))
-    println(variableArguments(2, 2, 2, 2)) */
+    println(variableArguments(2, 2, 2, 2))
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* for(x in 1..10) println(x)
+    for(x in 1..10) println(x)
     for(x in 1 until 10 step 2) println(x)
-    for(x in 10 downTo 1) println(x) */
+    for(x in 10 downTo 1) println(x)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* outer@ while(true) // labelled the outer loop
+    outer@ while(true) // labelled the outer loop
     {
         var x = 0
         while(true)
@@ -76,12 +76,12 @@ fun main() {
             println("once")
             if(x == 0) break@outer // breaking outer loop 
         }
-    } */
+    }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var arr : Array<String> = arrayOf("hii", "hello", "xyz")
+    var arr : Array<String> = arrayOf("hii", "hello", "xyz")
     println(arr.size)
     var mixedArr = arrayOf("hii", "hello", 1, 2, 3, 'c')
-    println(mixedArr.size) */
+    println(mixedArr.size)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     // primary contructor:-
     class PrimaryUser(fn : String, ln : String, age : Int) 
@@ -100,9 +100,9 @@ fun main() {
             this.above18 = this.age > 18
         }
     }
-    /* var user1 = PrimaryUser("ayu", "singh", 17)
+    var user1 = PrimaryUser("ayu", "singh", 17)
     user1.movie = "flash"
-    println("${user1.above18}") */
+    println("${user1.above18}")
 
     // primary constructor initialized in class header with default values. Directly initialised:-
     class DefaultUser(var firstName : String = "fname", var lastName : String = "lname", var age : Int = 0, var above18 : Boolean = false)
@@ -111,10 +111,10 @@ fun main() {
             above18 = age > 18
         }
     }
-    /* var user2 = DefaultUser("ayu", "singh", 21)
+    var user2 = DefaultUser("ayu", "singh", 21)
     println("${user2.above18}") 
     var user3 = DefaultUser()
-    println("${user3.firstName} , ${user3.lastName} , ${user3.age} , ${user3.above18}") */
+    println("${user3.firstName} , ${user3.lastName} , ${user3.age} , ${user3.above18}")
 
     // secondary contructor. Notice here no parenthesis
     class secondaryUser 
@@ -156,10 +156,10 @@ fun main() {
             println("secondary constructor 4")
         }
     }
-    /* secondaryUser("ayu", "singh", 17) 
+    secondaryUser("ayu", "singh", 17) 
     secondaryUser("ayu", "singh") 
     secondaryUser("ayu") 
-    secondaryUser() */ 
+    secondaryUser() 
  
     // a secondary constructor may call another secondary constructor of the same class using this() function
     class Add {
@@ -174,8 +174,8 @@ fun main() {
             println("The sum of two numbers is: $sumOfTwo")
         }
     }
-    /* Add(2,3,4) // this calls both constructors
-    Add(2,3) // only calls last constructor */
+    Add(2,3,4) // this calls both constructors
+    Add(2,3) // only calls last constructor
 
     class HeaderUser(var firstName : String, var lastName : String, var age : Int){
         constructor(firstName : String, lastName : String) : this(firstName, lastName, age = 0) // secondary constructor calls the primary constructor (class header).
@@ -193,10 +193,10 @@ fun main() {
             println("secodary constructor 3")
         }
     }
-    /* HeaderUser("ayu", "singh", 21) // calls the primary constructor (class header)
+    HeaderUser("ayu", "singh", 21) // calls the primary constructor (class header)
     HeaderUser("ayu", "singh") // this and below 2 calls the secondary constructor
     HeaderUser("ayu")
-    HeaderUser() */
+    HeaderUser()
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     class GetandSet(name : String)
     {
@@ -212,20 +212,20 @@ fun main() {
         }
     }
 
-    /* var obj = GetandSet("ayu")
-    print(obj.name) // calls getter
-    obj.name = "ayush" // calls setter */
+    var obj1 = GetandSet("ayu")
+    print(obj1.name) // calls getter
+    obj1.name = "ayush" // calls setter
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* var res = Static.sum(2,3)
-    print(res) */
+    var res = Static.sum(2,3)
+    print(res)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-  /* val instance1 = SingletonCustom.getInstance() // calls the func so the static variable "instance" being null, constructor is called by SingletonCustom() and an object or instance is created which is assigned to "instance" var. This var holds the memory address of that instance/object.
+  val instance1 = SingletonCustom.getInstance() // calls the func so the static variable "instance" being null, constructor is called by SingletonCustom() and an object or instance is created which is assigned to "instance" var. This var holds the memory address of that instance/object.
   val instance2 = SingletonCustom.getInstance() // on calling the func 2nd time, since instance var is static (is common to a class) is was set to an memory address (on prvs call), is not null . So the same address is returned
   println(instance1)
   println(instance2)
 
   println(singleton) // an instance is created which will trigger init println. Then the instance's address is printed.
-  println(singleton) // since an instance is already created (up). So no new instance is created thats why no init println. Only the  prvs instance' address is printed. */
+  println(singleton) // since an instance is already created (up). So no new instance is created thats why no init println. Only the  prvs instance' address is printed.
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     class LazyInit(var name : String)
     {
@@ -234,36 +234,130 @@ fun main() {
         }
     }
 
-    /* var normalObj = LazyInit("ayu")
-    val lazyObj by lazy { LazyInit("ayu") } // can use val only, otherwise error. */
+    var normalObj = LazyInit("ayu")
+    val lazyObj by lazy { LazyInit("ayu") } // can use val only, otherwise error.
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    /* for(i in Direction.values()) println(i)
+    for(i in Enum.values()) println(i)
 
-    Direction.NORTH.printData()
+    Enum.NORTH.printData()
 
-    var dir = Direction.NORTH
+    var dir = Enum.NORTH
     println(dir)
-    println("${dir.where} ${dir.dist} ${dir.name}") // printing dir.printData() will print "direction = north and distance = 10" but also prints "kotlin.Unit" in next line. "kotlin.Unit" represents no meaningful value in Kotlin. This is because the printtData() function does not have an explicit return type, so it implicitly returns kotlin.Unit. Therefore, after printing the enum constant data, it also prints the value returned by the printtData() function, which is kotlin.Unit. "Direction.NORTH.printtData()" is a direct call to the function and not part of an expression like dir.printtData(), it doesn't print the value returned by the function.
+    println("${dir.where} ${dir.dist} ${dir.name}") // printing dir.printData() will print "Enum = north and distance = 10" but also prints "kotlin.Unit" in next line. "kotlin.Unit" represents no meaningful value in Kotlin. This is because the printtData() function does not have an explicit return type, so it implicitly returns kotlin.Unit. Therefore, after printing the enum constant data, it also prints the value returned by the printtData() function, which is kotlin.Unit. "Enum.NORTH.printtData()" is a direct call to the function and not part of an expression like dir.printtData(), it doesn't print the value returned by the function.
 
-    println(Direction.valueOf("NORTH")) */
+    println(Enum.valueOf("NORTH"))
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------   
-    class InnerClass(var a : Int)
+    class InnerClass(var a: Int)
     {
         inner class Inner
         {
-            fun display(b : Int){
+            fun display(b: Int){
                 var sum = a + b 
                 println(sum)
             }
         }
      }
 
-    /* val obj = InnerClass(2)
-    obj.Inner().display(3) */
+    val obj = InnerClass(2)
+    obj.Inner().display(3)
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------   
+    open class Parent(var par: String)
+    {
+        open fun func(){
+            println("Parent")
+        }
+    }
 
+    open class Child(chi1: String, var chi2: String): Parent(chi1)
+    {
+        override fun func(){
+            println("Child")
+            super.func() // calls to the parent func
+        }
+    }
+    var par = Parent("ajay")
+    var chi = Child("ayu", "sin")
 
-} 
+    par.func()
+    chi.func()
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------   
+    /* var obj1 = SealedClass.Success("SUCCESS")
+    var obj2 = SealedClass.Error("ERROR")
+
+    getData(obj1)
+    getData(obj2)  */
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------   
+    // these classes are created to be inherited only. They can't have instances. They can have propeties and functions that is declared but can't be intialized coz initialization has to be done by child classes only.
+    abstract class AbstractVehicle(var hasEngine: Boolean = true)
+    {
+        // this property is not abstract. Called concrete meathods.
+        fun type(){
+        } 
+
+        // these functions are asbtract so cant have body.
+        abstract fun move() 
+        abstract fun stop()
+    }
+
+    class Car(var name: String): AbstractVehicle()
+    {
+        override fun move(){
+
+        }
+
+        override fun stop(){
+
+        }
+    }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------   
+    class CustomDataClass(var name: String)
+    {
+        override fun equals(other: Any?): Boolean
+        {
+            if(this === other) // if both ahve same memory location then obviously true. 
+            {
+                println("called 1st if")
+                return true
+            }
+
+            if(other is CustomDataClass)
+            {
+                println("called 2nd if")
+                return this.name == other.name
+            }
+            println("RHS of == is of different data type")
+            return false
+        }
+
+        override fun toString(): String {
+            return "name is $name"
+        }
+    }
+    var user11 = CustomDataClass("ayu")
+    var user21 = CustomDataClass("ayu")
+    var user31 = user11 
+    var user41: String = "ayu"
+
+    println(user11 == user31) 
+    println(user11 == user21) // "this" is user1 and "other" is user2. When == is not overloaded, it behaves like === operator.
+    println(user11.equals(user41))
+    println(user41.equals(user11))
+    println(user11)
+
+    data class DataClass(var name: String)
+    var user5 = DataClass("ayu")
+    var user6 = DataClass("ayu")
+    var user7 = user5 
+    var user8: String = "ayu"
+
+    println(user7 == user5) 
+    println(user5 == user6) // "this" is user1 and "other" is user2. When == is not overloaded, it behaves like === operator.
+    println(user5.equals(user8))
+    println(user8.equals(user5))
+    println(user5)
+    
+
+}  
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     fun myFun(a : Int, b : Int) : Int{ // the parameters here are val i.e. constants and name has to be same as arguments. Int outside the parameters means return type is int.
@@ -303,16 +397,54 @@ fun main() {
         }
     }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    enum class Direction(var where : String, var dist : Int)
+    enum class Enum(var where : String, var dist : Int)
     {
         NORTH("north", 10), // these are called enum cosntants and they are instances of enum class. And since our class have properties so each of these intances are also to have those properties. 
         SOUTH("south", 20),
         EAST("east", 15),
         WEST("west", 40);
         
-        fun printData() { // at line 224, var dir = Direction.NORTH so printing dir.printData()  prints println of func but also prints kotlin.Unit, 
-            println("direction = $where and distance = $dist")
+        fun printData() { // at line 224, var dir = Enum.NORTH so printing dir.printData()  prints println of func but also prints kotlin.Unit, 
+            println("Enum = $where and distance = $dist")
         }
     }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    sealed class SealedClass(val messg: String)
+    {
+        fun showMessg(){
+            println("message $messg")
+        }
+        class Success(messg: String): SealedClass(messg)
+        class Error(messg: String): SealedClass(messg)
+    }
+    fun getData(result: SealedClass){
+        when(result)
+        {
+            is SealedClass.Success -> result.showMessg()
+            is SealedClass.Error -> result.showMessg()
+        }
+    }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------   
+    // these are like abstract classes except it can't have contructors and in here, we can't have concrete meathods and properties. 
+    interface Engine
+    {
+        var hasWheels: Boolean
+        fun start()
+    }
+
+    class Ship(var name: String): Engine
+    {
+        override var hasWheels = false
+        override fun start(){
+            println("$name has started")
+        }
+    }
+
+    class Plane(var name: String): Engine
+    {
+        override var hasWheels = true
+        override fun start(){
+            println("$name has started")
+        }
+    }
 
