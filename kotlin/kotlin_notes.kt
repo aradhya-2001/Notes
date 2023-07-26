@@ -234,10 +234,10 @@ fun main() {
         }
     }
 
-    var normalObj = LazyInit("ayu")
-    val lazyObj by lazy { LazyInit("ayu") } // can use val only, otherwise error.
+    /* var normalObj = LazyInit("ayu")
+    val lazyObj by lazy { LazyInit("ayu") } // can use val only, otherwise error. */
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-    for(i in Enum.values()) println(i)
+    for(x in Enum.values()) println(x)
 
     Enum.NORTH.printData()
 

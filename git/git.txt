@@ -23,6 +23,7 @@ git remote                                  -> gives the name of the remote repo
 git remote -v                               -> gives name and url of repo where we have fetched from and where we pushed
 git remote remove origin                
 git clone <link> xyz                        -> clones the remote repo in our pc in the current dir under folder xyz
+
 git branch                                  -> which branch we are on
 git branch abc                              -> create branch abc
 git branch -m abc                           -> rename current branch to abc
@@ -31,9 +32,13 @@ git checkout -b exp                         -> create and switch
 git branch -d exp                           -> del exp branch
 git merge exp                               -> merge current branch (that we r on) to exp
 git commit -a                               -> after the merge conflict has been resolved do this to let git know merge conflict has been resolved
+
 git rebase main                             -> creates new commits after last commit of main and copies all commits of active branch to those copies (linear)
 git rebase -i main                          -> selective addition of commits of active branch
 git rebase -i <commit_id>^                  -> it select commits from commit_id till the top i.e. HEAD. To del any commits del their pick line in vim editor
+git rebase -i <commit_id>                   -> to del a particular commit 
+git rebase --continue                       -> to end interactive rebase
+git push origin HEAD --force                -> to del a commit from remote, 1st del it from local using reset or reabse then push changes to remote. Since local history is diff from the remote history, we need to use the force option
 
 
 
@@ -55,9 +60,9 @@ git cherry-pick <commit_id>
 
 rm -rf .git/
 
-*           -> ignores all
-*.txt       -> ignores all with .txt ext
-*.[ab]      -> ignores .a and .b exts  (not correct)
-/file.txt   -> only file.txt in current directory is ignored
-folder/     -> ignores all files in folder 
+*                   -> ignores all
+*.txt               -> ignores all with .txt ext
+*.[ab]              -> ignores .a and .b exts  (not correct)
+/file.txt           -> only file.txt in current directory is ignored
+folder              -> ignores all files in folder 
 
